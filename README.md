@@ -1,17 +1,28 @@
-# Microservice App - PRFT Devops Training
+# Proyecto de Despliegue con Pipeline y Microservicios
 
-This is the application you are going to use through the whole traninig. This, hopefully, will teach you the fundamentals you need in a real project. You will find a basic TODO application designed with a [microservice architecture](https://microservices.io). Although is a TODO application, it is interesting because the microservices that compose it are written in different programming language or frameworks (Go, Python, Vue, Java, and NodeJS). With this design you will experiment with multiple build tools and environments. 
+Este proyecto tiene como objetivo el **despliegue automatizado de microservicios en Azure** utilizando **Docker, Azure Container Apps, Terraform y GitHub Actions**.  
+La solución implementa buenas prácticas de arquitectura en la nube, incluyendo:  
+- **Contenerización** de microservicios con Docker.  
+- **Orquestación y autoscaling** en Azure Container Apps.  
+- **Trazabilidad distribuida** con Zipkin.  
+- **Resiliencia** mediante el patrón **Circuit Breaker** en `users-api`.  
+- **Infraestructura como código (IaC)** gestionada con Terraform.  
+- **Integración y despliegue continuo (CI/CD)** con GitHub Actions.  
 
-## Components
-In each folder you can find a more in-depth explanation of each component:
+---
 
-1. [Users API](/users-api) is a Spring Boot application. Provides user profiles. At the moment, does not provide full CRUD, just getting a single user and all users.
-2. [Auth API](/auth-api) is a Go application, and provides authorization functionality. Generates [JWT](https://jwt.io/) tokens to be used with other APIs.
-3. [TODOs API](/todos-api) is a NodeJS application, provides CRUD functionality over user's TODO records. Also, it logs "create" and "delete" operations to [Redis](https://redis.io/) queue.
-4. [Log Message Processor](/log-message-processor) is a queue processor written in Python. Its purpose is to read messages from a Redis queue and print them to standard output.
-5. [Frontend](/frontend) Vue application, provides UI.
+## Documentación del Proyecto
 
-## Architecture
+La documentación detallada se encuentra organizada en archivos separados:
 
-Take a look at the components diagram that describes them and their interactions.
-![microservice-app-example](/arch-img/Microservices.png)
+- 📌 [Metodología de Trabajo](./metología.md)  
+- 🌿 [Estrategia de Branching](./estrategiaBranching.md)  
+- 🏗️ [Diagrama de Arquitectura](./arch-img/azure-architecture.drawio.png)  
+
+---
+
+## Repositorio de Infraestructura
+
+El código relacionado con la **infraestructura como código (IaC)** se encuentra en un repositorio separado:  
+
+🔗 [Repositorio de Infraestructura](https://github.com/DaniLond/Microservicio-Infraestructura.git)  

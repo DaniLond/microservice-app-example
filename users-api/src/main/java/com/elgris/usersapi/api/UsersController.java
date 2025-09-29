@@ -56,7 +56,6 @@ public class UsersController {
 
         return userRepository.findOneByUsername(username);
     }
-
     public User getUserFallback(HttpServletRequest request, String username, Throwable t) {
         User fallbackUser = new User();
         fallbackUser.setUsername("unknown");

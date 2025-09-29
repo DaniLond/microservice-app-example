@@ -33,7 +33,6 @@ jobs:
           creds: ${{ secrets.CREDS }}
           auth-type: SERVICE_PRINCIPAL
 
-      # --- PASO MODIFICADO ---
       - name: Update and force redeploy Azure Container App
         uses: azure/CLI@v1
         with:
